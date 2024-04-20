@@ -77,6 +77,23 @@ public class DoubleLinkedListOfInteger {
     /*** READ | Operações de leitura de dados na lista encadeada
     /**********************************************************************************
 
+     /**
+     * Método que conta o número de ocorrências do elemento passado como parâmetro na lista, retornando este valor
+     * @param element elemento a ser inserido
+     * @return valor inteiro relativo ao número de ocorrências encontradas
+     */
+    public int countOccurrences(Integer element){
+        Node aux = header.next;
+        int ocurrences =0;
+        for (int i = 0; i < count; i++) {
+            if(aux.element.equals(element)){
+                ocurrences++;
+            }
+            aux = aux.next;
+        }
+        return ocurrences;
+    }
+
     /**
     * Método get()
     * Retorna o elemento de uma determinada posicao da lista
@@ -144,6 +161,29 @@ public class DoubleLinkedListOfInteger {
     /*** DELETE | Operações de remoção de dados na lista encadeada
     /**********************************************************************************
 
+     /**
+     * Método que percorre a lista removendo todos os elementos pares.
+     * Defina os atributos necessários para este algoritmo, pois nenhum método já implementado pode ser chamado
+     * pois nenhum método já implementado pode ser chamado.
+     * @return true se houver alguma remoção, e false caso não tenham elementos pares e não seja feita remoção
+     */
+    public boolean removeEvenNumbers(){
+        Node aux = header.next;
+        boolean removed = false;
+        while (aux.element != null) {
+            if (aux.element % 2 == 0) {
+                aux.prev.next = aux.next;
+                if (aux.next != null) {
+                    aux.next.prev = aux.prev;
+                }
+                count--;
+                removed = true;
+            }
+            aux = aux.next;
+        }
+
+        return removed;
+    }
     /**
     * Método remove()
     * Remove a primeira ocorrencia do elemento na lista, se estiver presente

@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 
 public class App {
 
@@ -5,7 +6,7 @@ public class App {
 
         DoubleLinkedListOfInteger dlist = new DoubleLinkedListOfInteger();
         dlist.add(10);
-        dlist.add(20);
+        dlist.add(35);
         dlist.add(30);
         dlist.add(40);
         dlist.add(50);
@@ -32,7 +33,9 @@ public class App {
         System.out.println("Lista atual: " + dlist);
 
         System.out.println("List de trás para frente: " + dlist.toStringBackToFront());
-
+        System.out.println("Ocorrências: " + dlist.countOccurrences(10));
+        System.out.println("Removeram-se os pares: " + dlist.removeEvenNumbers());
+        System.out.println("Lista atual: " + dlist);
     }
 
 }
