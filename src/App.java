@@ -6,7 +6,7 @@ public class App {
     public static void main(String[] args) {
 /********************************************************
 /Aplicação de teste para a DoubleLinkedListOfInteger
-/**********************************************************
+**********************************************************/
         DoubleLinkedListOfInteger dlist = new DoubleLinkedListOfInteger();
         dlist.add(10);
         dlist.add(35);
@@ -39,7 +39,7 @@ public class App {
         System.out.println("Ocorrências: " + dlist.countOccurrences(10));
         System.out.println("Removeram-se os pares: " + dlist.removeEvenNumbers());
         System.out.println("Lista atual: " + dlist);
-    */
+
 
 /*****************************************************************************
  * Aplicação de testes para a StackOfInteger
@@ -51,26 +51,49 @@ public class App {
         stack.push(20);
         stack.push(30);
 
-        // Imprimindo o elemento no topo da pilha
+        // Executando os métodos principais de manipulação
         System.out.println("Topo da pilha: " + stack.top());
-
-        // Removendo e imprimindo os elementos da pilha
-            System.out.println("Removido: " + stack.pop());
-        //Verificando o tamanho da lista
+        System.out.println("Removido: " + stack.pop());
         System.out.println("Tamanho atual: " + stack.size());
-
-        // Verificando se a pilha está vazia
         System.out.println("Pilha vazia: " + stack.isEmpty());
 
-        //Limpando a lista
+        //Verificando limpeza da pilha
         System.out.println("Limpando a pilha");
         stack.clear();
         System.out.println("Pilha vazia: " + stack.isEmpty());
 
-        //Inversão de array usando pilha
+        //Método estático para inversão de pilha utilizando arrays
         int [] arrayOriginal = {1,2,3,4,5};
         System.out.println("Array original para ser invertido: " + Arrays.toString(arrayOriginal));
         System.out.println("Invertendo um array usando Pilha: " + Arrays.toString(StackOfInteger.reverseArrayUsingStack(arrayOriginal)));
+
+
+        /******************************************************************
+         Manipulando testes para filas
+         *******************************************************************/
+
+        QueueOfInteger queue = new QueueOfInteger();
+        QueueOfInteger queuePrioritaria = new QueueOfInteger();
+
+        //Criando a lista com valores iniciais
+        queue.enqueue(10);
+        queue.enqueue(20);
+        queue.enqueue(30);
+
+        //Executando métodos básicos
+        System.out.println("Fila inicial: " + queue);
+        System.out.println("Elemento na frente da fila: " + queue.head());
+        System.out.println("Removido: " + queue.dequeue());
+        System.out.println("Fila atual: " + queue);
+        System.out.println("Fila vazia: " + queue.isEmpty());
+
+        //Criando fila com ordenamento prioritário
+        queuePrioritaria.enqueuePriority(80);
+        queuePrioritaria.enqueuePriority(20);
+        queuePrioritaria.enqueuePriority(50);
+
+        //Verificando a ordem da fila priotitária
+        System.out.println("Lista com prioridades: " + queuePrioritaria);
     }
 
 }
