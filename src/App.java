@@ -1,9 +1,12 @@
 import java.sql.SQLOutput;
+import java.util.Arrays;
 
 public class App {
 
     public static void main(String[] args) {
-
+/********************************************************
+/Aplicação de teste para a DoubleLinkedListOfInteger
+/**********************************************************
         DoubleLinkedListOfInteger dlist = new DoubleLinkedListOfInteger();
         dlist.add(10);
         dlist.add(35);
@@ -36,6 +39,38 @@ public class App {
         System.out.println("Ocorrências: " + dlist.countOccurrences(10));
         System.out.println("Removeram-se os pares: " + dlist.removeEvenNumbers());
         System.out.println("Lista atual: " + dlist);
+    */
+
+/*****************************************************************************
+ * Aplicação de testes para a StackOfInteger
+ *******************************************************************************/
+        StackOfInteger stack = new StackOfInteger();
+
+        // Adicionando elementos à pilha
+        stack.push(10);
+        stack.push(20);
+        stack.push(30);
+
+        // Imprimindo o elemento no topo da pilha
+        System.out.println("Topo da pilha: " + stack.top());
+
+        // Removendo e imprimindo os elementos da pilha
+            System.out.println("Removido: " + stack.pop());
+        //Verificando o tamanho da lista
+        System.out.println("Tamanho atual: " + stack.size());
+
+        // Verificando se a pilha está vazia
+        System.out.println("Pilha vazia: " + stack.isEmpty());
+
+        //Limpando a lista
+        System.out.println("Limpando a pilha");
+        stack.clear();
+        System.out.println("Pilha vazia: " + stack.isEmpty());
+
+        //Inversão de array usando pilha
+        int [] arrayOriginal = {1,2,3,4,5};
+        System.out.println("Array original para ser invertido: " + Arrays.toString(arrayOriginal));
+        System.out.println("Invertendo um array usando Pilha: " + Arrays.toString(StackOfInteger.reverseArrayUsingStack(arrayOriginal)));
     }
 
 }
